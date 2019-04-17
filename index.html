@@ -10,7 +10,7 @@
 $(document).ready(function(){
 	$("button").click(function(){
 		var request = $.ajax({
-			url: " convertExcelToJson.api.php",
+			url: " convertExcelToJson.php",
 			method: "POST",	
 			dataType: "json" // since i write dataType:json there is no need for JSON.parse 
 		})		
