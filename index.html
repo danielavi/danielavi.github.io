@@ -1,0 +1,42 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  
+
+$(document).ready(function(){
+	$("button").click(function(){
+		var request = $.ajax({
+			url: " convertExcelToJson.api.php",
+			method: "POST",	
+			dataType: "json" // since i write dataType:json there is no need for JSON.parse 
+		})		
+		
+		request.done(function( data ) {		
+		  alert(data.status);	
+		})	 					  
+		
+		request.fail(function( jqXHR, textStatus ) {
+			alert( "Request failed: " + textStatus );
+		}) 
+	})
+})
+
+</script>
+ 
+</head>
+<body>
+
+<h2>Memshakit</h2>
+  
+	  
+<div id ="start"></div>
+
+<button>reload excel</button>
+
+</body>
+</html>
+
